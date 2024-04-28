@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_task/cubit/cubit/auth_cubit.dart';
 import 'package:login_task/ui/pages/login/login_screen.dart';
+import 'package:login_task/utils/di/locator.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,7 +16,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
+      home: BlocProvider(
+        create: (context) => AuthCubit(locator()),
+        child: const LoginScreen(),
+      ),
     );
   }
 }
