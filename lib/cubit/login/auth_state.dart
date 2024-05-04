@@ -11,6 +11,8 @@ final class AuthSuccses extends AuthState {
 }
 
 
+
+
 final class AuthLoading extends AuthState {}
 final class AuthError extends AuthState {}
 final class AuthNetworkFail extends AuthState {
